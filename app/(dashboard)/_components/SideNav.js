@@ -8,8 +8,8 @@ function SideNav() {
   const menuList = [
     {
       id: 1,
-      name: "Uploaddddd",
-      icon: Uploaddd,
+      name: "Upload",
+      icon: Upload,
       path: "/upload",
     },
     {
