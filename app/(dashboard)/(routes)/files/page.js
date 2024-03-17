@@ -33,21 +33,21 @@ function Files() {
 
   return (
     <>
-      <div className="mt-28 ml-8">
+      <div className="mt-24 absolute left-56">
         <h1 className="text-black text-lg">My Files</h1>
         <div className="border w-[78%] h-9 rounded mt-2">
           <p className="ml-2 mt-1">Total Files: {Allfiles.length}</p>
         </div>
-        <div className="flex gap-56 mt-6 ml-2">
+        <div className="flex gap-56 mt-10">
           <p>File Name</p>
           <p>Type</p>
           <p>Size</p>
         </div>
-        <div className="mr-2 mt-2 ">
+        <div className="mt-4 ">
           {Allfiles?.map((file, index) => (
             <div
               key={index}
-              className="flex gap-64 border-t border-b py-1.5 bg-gray-50 "
+              className="flex gap-64 border-t border-b py-1.5 bg-gray-50 pr-8 "
             >
               <span className="max-w-4 ml-2">{file?.fileName}</span>
               <span className="max-w-4">{file?.fileType}</span>

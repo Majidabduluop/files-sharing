@@ -1,30 +1,43 @@
 "use client";
 import React, { useState } from "react";
-import { Upload, File, Shield } from "lucide-react";
+import { Upload, File, Shield, Home } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 function SideNav() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const router = useRouter();
   const menuList = [
     {
       id: 1,
       name: "Upload",
       icon: Upload,
-      path: "/upload",
+      path: "/upload/",
     },
     {
       id: 2,
       name: "Files",
       icon: File,
-      path: "/files",
+      path: "/files/",
     },
     {
       id: 3,
       name: "Upgrade",
       icon: Shield,
-      path: "/upgrade",
+      path: "/upgrade/",
+    },
+    {
+      id: 4,
+      name: "Home",
+      icon: Home,
+      path: "/",
     },
   ];
+
+  const handlenavigation = (path, index) => {
+    router.push(path);
+    setActiveIndex(index);
+  };
   return (
     <>
       <div className="flex  mt-4">
@@ -114,9 +127,9 @@ function SideNav() {
           </div>
 
           <div className="flex flex-col gap-6 mt-12">
-            {/* {menuList.map((item, index) => (
+            {menuList.map((item, index) => (
               <button
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handlenavigation(item.path, index)}
                 className={`p-4 flex flex-row gap-4 px-6 hover:bg-gray-100 text-black ${
                   activeIndex === index ? "bg-blue-50 text-blue-600" : ""
                 }`}
@@ -124,7 +137,7 @@ function SideNav() {
                 <item.icon />
                 {item.name}
               </button>
-            ))} */}
+            ))}
           </div>
         </div>
         <div className="h-12 flex border-b px-[210%] relative">

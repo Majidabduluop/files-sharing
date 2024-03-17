@@ -39,6 +39,7 @@ function Filepreview({ params }) {
       userEmai: Filedetail.userEmai,
       userName: Filedetail.userName,
     });
+    setpass("");
   };
 
   useEffect(() => {
@@ -93,7 +94,7 @@ function Filepreview({ params }) {
 
         <div className="md:absolute md:right-[6%] md:top-40">
           <label className="ml-1 text-gray-600 ">ShortUrl</label>
-          <div class="grid grid-cols-8 gap-2 w-full max-w-[23rem] mt-2">
+          <div class="grid grid-cols-8 gap-2 w-full max-w-[23rem] mt-2 mb-2">
             <label for="npm-install" class="sr-only">
               Label
             </label>
@@ -132,9 +133,12 @@ function Filepreview({ params }) {
               </span>
             </button>
           </div>
-          <div className="mt-6 flex relative">
+          <label> Enable or Update Password</label>
+
+          <div className="mt-2 flex relative">
             <input
               onChange={(e) => handlechange(e)}
+              value={pass}
               type={show ? "text" : "password"}
               className="w-[54%] h-10 rounded-lg mr-2 border border-red-50"
             />
@@ -151,8 +155,9 @@ function Filepreview({ params }) {
             )}
 
             <button
+              disabled={pass?.length < 6}
               onClick={updatepassword}
-              className="bg-blue-700 text-white rounded-lg text-sm  w-[17%] "
+              className="bg-blue-700 text-white rounded-lg text-sm  w-[17%] disabled:bg-gray-500"
             >
               Password
             </button>

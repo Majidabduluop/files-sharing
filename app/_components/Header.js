@@ -7,6 +7,9 @@ function Header() {
   const movetohome = () => {
     router.push("/upload/");
   };
+  const aboutus = () => {
+    router.push("/about/");
+  };
   return (
     <div>
       <header class="bg-white">
@@ -47,7 +50,10 @@ function Header() {
                 </li>
 
                 <li>
-                  <a class=" transition hover:text-gray-500/75" href="#">
+                  <a
+                    class=" transition hover:text-gray-500/75"
+                    onClick={aboutus}
+                  >
                     {" "}
                     About Us{" "}
                   </a>

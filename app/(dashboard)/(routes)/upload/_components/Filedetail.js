@@ -4,7 +4,7 @@ import { Image } from "lucide-react";
 function Filedetail({ details, removefile }) {
   return (
     <>
-      <div className=" text-blue-500 flex py-2 gap-4 border w-[75%] rounded ">
+      <div className=" text-blue-500 flex py-2 gap-4 border min-w-[75%] rounded relative">
         <Image size={70} />
         <div>
           <h1 className="mt-2 text-gray-600">{details.name}</h1>
@@ -14,7 +14,7 @@ function Filedetail({ details, removefile }) {
         </div>
         <div
           onClick={() => removefile()}
-          className="text-blue-500 cursor-pointer ml-[55%] text-xl font-semibold"
+          className="text-blue-500 cursor-pointer  text-xl font-semibold absolute right-4"
         >
           X
         </div>
